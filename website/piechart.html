@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pie Chart</title>
+    <style>
+        #logo{
+
+            margin-top: -11%;
+            margin-left:23%;
+        }
+        #container{
+            margin-top: 1%;
+        }
+
+        #buttons{
+            margin-top: -80%;
+            display: inline-block;
+        }
+        #previous{
+            margin-left: 0.2%;
+            margin-top: -0.5%;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script type='text/javascript'>
+        $(function () {
+            $('#container').highcharts({
+                title: {
+                    text: 'Box office performance of 7 most important nominated films',
+                    style: {fontFamily: 'Letter Gothic Std'}
+                },
+                subtitle: {
+                    text: 'Source: <a href="http://www.boxofficemojo.com/oscar/chart/?yr=2014&view=fulldetail&p=.html">Box Office</a>'
+                },
+
+                xAxis: {
+                    categories: ['Pre-nomination(Before Jan. 16)', 'Post-nomination(Jan. 16-Feb. 22)', 'Post-awards(After Feb. 22)']
+                },
+                labels: {
+                    items: [{
+                        html: 'Total Money earned in Millions $',
+                        style: {
+                            left: '50px',
+                            top: '18px',
+                            color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                        }
+                    }]
+                },
+                series: [{
+                    type: 'column',
+                    name: 'American Sniper',
+                    data: [3.4, 316, 30.1]
+
+                }, {
+                    type: 'column',
+                    name: 'Birdman',
+                    data: [26.6, 11.2, 4.6]
+                }, {
+                    type: 'column',
+                    name: 'Boyhood',
+                    data: [24.4, 0.942 ,0.37]
+                }, {
+                    type: 'column',
+                    name: 'The Imitation Game',
+                    data: [42.8, 41.1, 7.2 ]
+                }, {
+                    type: 'column',
+                    name: 'Selma',
+                    data: [16.6,33, 2.5]
+                }, {
+                    type: 'column',
+                    name: 'Whiplash',
+                    data: [6.2, 5.1,1.8 ]
+                },{
+                    type: 'column',
+                    name: 'The Theory of Everything',
+                    data: [26.2,7.9, 1.8]
+                },{
+                    type: 'pie',
+                    name: 'Total consumption',
+                    data: [{
+                        name: 'American Sniper',
+                        y: 350,
+                        color: Highcharts.getOptions().colors[0] // Jane's color
+                    }, {
+                        name: 'Birdman',
+                        y: 42.3,
+                        color: Highcharts.getOptions().colors[1] // John's color
+                    }, {
+                        name: 'Boyhood',
+                        y: 25.3,
+                        color: Highcharts.getOptions().colors[2] // Joe's color
+                    }, {
+                        name: 'The Imitation Game',
+                        y: 91.2,
+                        color: Highcharts.getOptions().colors[3] // John's color
+                    }, {
+                        name: 'Selma',
+                        y: 52.1,
+                        color: Highcharts.getOptions().colors[4] // John's color
+                    }, {
+                        name: 'Selma',
+                        y: 13.1,
+                        color: Highcharts.getOptions().colors[5] // John's color
+                    }, {
+                        name: 'The Theory of Everything',
+                        y: 35.9,
+                        color: Highcharts.getOptions().colors[6] // John's color
+                    }],
+                    center: [100, 80],
+                    size: 100,
+                    showInLegend: false,
+                    dataLabels: {
+                        enabled: false
+                    }
+                }]
+            });
+        });
+
+
+
+    </script>
+
+</head>
+<body>
+<div id = logo><a class="one" href="index.html"><img src="oscars.jpg"></a></div>
+<div id = buttons>
+    <div id = next><a class="one" href="graphrating.html"><img src="next.png" width="200" height="110"></a></div></div>
+<div id = previous><a class="one" href="main2.html"><img src="previous.png" width="200" height="110"></a></div>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+</body>
+</html>

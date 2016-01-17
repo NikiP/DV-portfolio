@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies Budget</title>
+
+    <style>
+        #logo{
+
+            margin-top: -11%;
+            margin-left:23%;
+        }
+        #container{
+            margin-top: 1%;
+        }
+        #buttons{
+            margin-top: -80%;
+            display: inline-block;
+        }
+        #previous{
+            margin-left: 0.2%;
+            margin-top: -0.5%;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+    <script type='text/javascript'>$(function () {
+    $('#container').highcharts({
+
+    chart: {
+    type: 'column'
+    },
+
+    title: {
+    text: 'Budgets of all Oscar Award winners 2015',
+        style: {fontFamily: 'Letter Gothic Std'}
+    },
+    subtitle: {
+    text: 'Source: <a href="http://imdb.com">IMDB</a>'
+    },
+    xAxis: {
+    categories: ['Birdman ', 'The Grand Budapest Hotel', 'Whiplash', 'The Imitation Game', 'American Sniper', 'Boyhood',
+    'Interstellar', 'The Theory of Everything', 'Ida', 'Selma', 'Still Alice', 'Big Hero 6', 'Menu'],
+
+    },
+
+    yAxis: {
+    allowDecimals: false,
+    min: 0,
+    title: {
+    text: 'Budget in Million $'
+    }
+    },
+
+    tooltip: {
+    formatter: function () {
+    return '<b>' + this.x + '</b><br/>' +
+    this.series.name + ': ' + this.y;
+    }
+    },
+
+    plotOptions: {
+    column: {
+    stacking: 'normal'
+    }
+    },
+
+    series: [{
+    name: 'Budget (Million of $)',
+        color: 'GoldenRod',
+    data: [18, 23, 3.3, 14, 58.8, 4, 180, 15, 3, 20, 5, 165, 4 ],
+    stack: 'male'
+    }]
+    });
+    });
+    </script>
+
+
+</head>
+<body>
+<div id = logo><a class="one" href="index.html"><img src="oscars.jpg"></a></div>
+<div id = buttons>
+    <div id = next><a class="one" href="stats.html"><img src="next.png" width="200" height="110"></a></div></div>
+<div id = previous><a class="one" href="graphrating.html"><img src="previous.png" width="200" height="110"></a></div>
+<div id="container" style="min-width: 310px; height: 400px;"></div>
+</body>
+</html>
+
+<

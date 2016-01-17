@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Ratings</title>
+    <style>
+        #logo{
+
+            margin-top: -11%;
+            margin-left:23%;
+        }
+        #container{
+            margin-top: 3%;
+        }
+        #buttons{
+            margin-top: -80%;
+            display: inline-block;
+        }
+        #previous{
+            margin-left: 0.2%;
+            margin-top: -0.5%;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script type='text/javascript'>$(function () {
+        $('#container').highcharts({
+
+            chart: {
+                type: 'column'
+            },
+
+            title: {
+                text: 'Award Winners Movies ratings',
+                style: {fontFamily: 'Letter Gothic Std'}
+            },
+            subtitle: {
+                text: 'Source: <a href="http://imdb.com">IMDB and </a><a href="http://www.kinopoisk.ru">Kinopoisk </a>'
+            },
+            xAxis: {
+                categories: ['Birdman ', 'The Grand Budapest Hotel', 'Whiplash', 'The Imitation Game', 'American Sniper', 'Boyhood',
+                    'Interstellar', 'The Theory of Everything', 'Ida', 'Selma', 'Still Alice', 'Big Hero 6', 'Menu']
+            },
+
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: 'Budget in Million $'
+                }
+            },
+
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.x + '</b><br/>' +
+                            this.series.name + ': ' + this.y;
+                }
+            },
+
+            plotOptions: {
+                column: {
+                    stacking: 'normal'
+                }
+            },
+
+            series: [{
+                name: 'Kinopoisk.com',
+                color: 'GoldenRod',
+                data: [7.6, 7.9, 8.3, 6.9, 7.4, 8.6, 7.9, 6.8, 6.8, 7.5, 8, 7.3, 8.3 ],
+                stack: 'male'
+            },
+                {
+                    name: 'IMDB',
+                    color: 'black',
+                    data: [ 7.8, 8.1, 8.5, 7.3, 8, 8.6, 7.7, 7.4, 7.5, 7.5, 7.9, 8.1, 8.3],
+                    stack:'female'
+                }]
+        });
+    });
+    </script>
+</head>
+<body>
+<div id = logo><a class="one" href="index.html"><img src="oscars.jpg"></a></div>
+<div id = buttons>
+    <div id = next><a class="one" href="Rating.html"><img src="next.png" width="200" height="110"></a></div></div>
+<div id = previous><a class="one" href="piechart.html"><img src="previous.png" width="200" height="110"></a></div>
+<div id="container" style="min-width: 310px; height: 400px;"></div>
+</body>
+</html>

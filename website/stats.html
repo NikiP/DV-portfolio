@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TV Stats</title>
+    <style>
+        #logo{
+
+            margin-top: -11%;
+            margin-left:23%;
+        }
+        #container{
+            margin-top: 1%;
+        }
+        #buttons{
+            margin-top: -80%;
+            display: inline-block;
+        }
+        #previous{
+            margin-left: 0.2%;
+            margin-top: -0.5%;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script type='text/javascript'>
+        $(function () {
+            $('#container').highcharts({
+                chart: {
+                    type: 'spline'
+                },
+                title: {
+                    text: 'Oscar Ceremony TV Viewers(Millions)',
+                    style: {fontFamily: 'Letter Gothic Std'}
+                },
+                subtitle: {
+                    text: ''
+                },
+                xAxis: {
+                    categories: ['1983', '1984', '1985', '1986', '1987','1988','1989', '1990','1991', '1992', '1993', '1994','1995', '1996', '1997', '1998','1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Viewers'
+                    },
+                    labels: {
+                        formatter: function () {
+                            return this.value + '';
+                        }
+                    }
+                },
+                tooltip: {
+                    crosshairs: true,
+                    shared: true
+                },
+                plotOptions: {
+                    spline: {
+                        marker: {
+                            radius: 4,
+                            lineColor: '#666666',
+                            lineWidth: 1
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Viewers',
+                    color: 'GoldenRod',
+                    marker: {
+                        symbol: 'square'
+                    },
+                    data: [53.235, 42.051, 38.855, 37.757, 37.190, 42.227,42.619, 40.375, 42.727, 44.406, 45.735, 45.083, 48.279, 44.867, 40.075 ,55.249,45.615, 46.333, 42.944, 41.782, 33.043, 43.531,42.139, 38.939, 40.172, 32.006, 36.310, 41.699, 37.919, 39.460, 40.376, 43.740, 37.260],
+
+                }]
+            });
+        });
+    </script>
+    <script type='text/javascript'>
+        $(function () {
+            $('#second').highcharts({
+                chart: {
+                    type: 'spline'
+                },
+                title: {
+                    text: 'TV Add price (Thousands of $)',
+                    style: {fontFamily: 'Letter Gothic Std'}
+                },
+                subtitle: {
+                    text: 'Source: <a href="http://en.wikipedia.org/wiki/87th_Academy_Awards">Wikipedia</a>'
+                },
+                xAxis: {
+                    categories: ['1983', '1984', '1985', '1986', '1987','1988','1989', '1990','1991', '1992', '1993', '1994','1995', '1996', '1997', '1998','1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Price in $'
+                    },
+                    labels: {
+                        formatter: function () {
+                            return this.value + '';
+                        }
+                    }
+                },
+                tooltip: {
+                    crosshairs: true,
+                    shared: true
+                },
+                plotOptions: {
+                    spline: {
+                        marker: {
+                            radius: 4,
+                            lineColor: '#FFFFFF',
+                            lineWidth: 1
+                        }
+                    }
+                },
+                series: [ {
+                    name: 'Price',
+                    color: 'GoldenRod',
+                    marker: {
+                        symbol: 'diamond'
+                    },
+                    data: [245, 275, 315, 320, 335, 360, 375, 450, 475, 560, 607, 643, 700, 795, 850, 950, 1000, 1305, 1450, 1290, 1345, 1503, 1503, 1646, 1665, 1820,1300, 1127, 1368, 1610, 1700, 1800, 1950],
+                }]
+            });
+        });
+    </script>
+</head>
+<body>
+<div id = logo><a class="one" href="index.html"><img src="oscars.jpg"></a></div>
+<div id = buttons>
+    <div id = next><a class="one" href="main.html"><img src="next.png" width="200" height="110"></a></div></div>
+<div id = previous><a class="one" href="Rating.html"><img src="previous.png" width="200" height="110"></a></div>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div id="second" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+</body>
+</html>

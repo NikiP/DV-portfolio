@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Award Winners</title>
+    <style>
+        #logo{
+
+            margin-top: -12%;
+            margin-left:23%;
+        }
+        #container{
+            margin-top: 2%;
+        }
+        #buttons{
+            margin-top: -80%;
+            display: inline-block;
+        }
+        #previous{
+            margin-left: 0.2%;
+            margin-top: -0.5%;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+    <script type='text/javascript'>
+        $(function () {
+            $('#container').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: '87th Academy Awards Winners',style: {fontFamily: 'Letter Gothic Std'}
+
+
+                },
+                subtitle: {
+                    text: 'Source: <a href="http://en.wikipedia.org/wiki/87th_Academy_Awards">Wikipedia</a>'
+                },
+                xAxis: {
+                    type: 'category',
+                    labels: {
+                        rotation: -45,
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Awards won'
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    pointFormat: 'Awards won: <b>{point.y:.1f} </b>'
+                },
+                series: [{
+                    name: 'Population',
+                    color: 'GoldenRod',
+                    data: [
+                        ['Birdman ', 4],
+                        ['The Grand Budapest Hotel', 4],
+                        ['Whiplash', 3],
+                        ['The Imitation Game', 1],
+                        ['American Sniper ', 1],
+                        ['Boyhood', 1],
+                        ['Interstellar', 1],
+                        ['The Theory of Everything', 1],
+                        ['Ida', 1],
+                        ['Selma', 1],
+                        ['Still Alice', 1],
+                        ['Big Hero 6', 1],
+                        ['Citizenfour', 1],
+                        [' Crisis hotline: veterans press 1', 1],
+                        ['Feast', 1],
+                        ['Menu', 1]
+                    ],
+                    dataLabels: {
+                        enabled: true,
+                        rotation: -90,
+                        color: '#FFFFFF',
+                        align: 'right',
+                        format: '{point.y}', // one decimal
+                        y: 10, // 10 pixels down from the top
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                }]
+            });
+        });
+    </script>
+
+</head>
+<body>
+<div id = logo><a class="one" href="index.html"><img src="oscars.jpg"></a></div>
+<div id = buttons>
+    <div id = next><a class="one" href="piechart.html"><img src="next.png" width="200" height="110"></a></div></div>
+<div id = previous><a class="one" href="main.html"><img src="previous.png" width="200" height="110"></a></div>
+<div id="container" style="min-width: 300px; height: 400px;"></div>
+
+
+</body>
+</html>
